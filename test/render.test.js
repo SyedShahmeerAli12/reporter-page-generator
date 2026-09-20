@@ -75,7 +75,7 @@ test('renderPage flags unanswered questions so a draft cannot be sent blind', ()
   const html = renderPage(buildPacket(brief, facts, { now: NOW }));
   const pending = html.match(/data-needs-answer="true"/g) || [];
   assert.equal(pending.length, 2);
-  assert.ok(html.includes('[Thomas — answer here before sending]'));
+  assert.ok(html.includes('[Thomas: answer here before sending]'));
 });
 
 test('renderPage escapes hostile reporter input', () => {

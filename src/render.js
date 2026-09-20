@@ -64,7 +64,7 @@ export function renderPage(packet) {
         .map(
           (q, i) => `<div class="qa">
         <p class="q"><span class="qn">${i + 1}</span>${escapeHtml(q)}</p>
-        <p class="a" data-needs-answer="true">[Thomas — answer here before sending]</p>
+        <p class="a" data-needs-answer="true">[Thomas: answer here before sending]</p>
       </div>`
         )
         .join('\n      ')}
@@ -73,7 +73,7 @@ export function renderPage(packet) {
 
   const quotesBlock = packet.quotes.length
     ? `<section class="card">
-      <h2>Already on the record <span class="sub">— quote these directly</span></h2>
+      <h2>Already on the record <span class="sub">(quote these directly)</span></h2>
       ${packet.quotes
         .map(
           (q) => `<figure class="quote">
@@ -86,7 +86,7 @@ export function renderPage(packet) {
     </section>`
     : `<section class="card">
       <h2>Already on the record</h2>
-      <p class="muted">Nothing previously published maps cleanly to this subject — so rather than stretch an old quote, let's do this live. Fifteen minutes is usually enough.</p>
+      <p class="muted">Nothing previously published maps cleanly to this subject, so rather than stretch an old quote, let's do this live. Fifteen minutes is usually enough.</p>
     </section>`;
 
   const pressBlock = `<section class="card">
@@ -106,7 +106,7 @@ export function renderPage(packet) {
 
   const bios = [
     ['One-liner', f.bios.oneLiner],
-    ['Short — 60 words', f.bios.short],
+    ['Short (60 words)', f.bios.short],
     ['Full', f.bios.full],
   ];
 
@@ -116,7 +116,7 @@ export function renderPage(packet) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>For ${escapeHtml(packet.reporter || 'press')}${packet.outlet ? ' · ' + escapeHtml(packet.outlet) : ''} — Thomas Prommer</title>
+<title>For ${escapeHtml(packet.reporter || 'press')}${packet.outlet ? ' · ' + escapeHtml(packet.outlet) : ''} | Thomas Prommer</title>
 <meta name="description" content="Press materials prepared for ${escapeHtml(packet.reporter || 'press')}${escapeHtml(outletLine)}.">
 <script type="application/ld+json">
 ${escapeJsonLd(buildJsonLd(f))}
@@ -202,7 +202,7 @@ footer a{color:var(--muted)}
 <div class="wrap">
 
   <p class="eyebrow">Prepared for you</p>
-  <h1>Hi ${escapeHtml(who)} — everything you need is on this page.</h1>
+  <h1>Hi ${escapeHtml(who)}, everything you need is on this page.</h1>
   <p class="lede">${
     packet.subject
       ? `Put together for your piece on ${escapeHtml(packet.subject)}${outletLine}.`
@@ -234,7 +234,7 @@ footer a{color:var(--muted)}
   ${quotesBlock}
 
   <section class="card">
-    <h2>Bios <span class="sub">— pick a length, one click to copy</span></h2>
+    <h2>Bios <span class="sub">(pick a length, one click to copy)</span></h2>
     ${bios
       .map(
         ([label, text]) => `<div class="bio">
@@ -259,7 +259,7 @@ footer a{color:var(--muted)}
 
   <footer>
     Prepared ${escapeHtml(new Date(packet.generatedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }))} for ${escapeHtml(packet.reporter || 'press')}${outletLine}.<br>
-    Unlisted page — not indexed, not linked from <a href="${escapeHtml(f.person.site)}">prommer.net</a>.
+    Unlisted page. Not indexed, not linked from <a href="${escapeHtml(f.person.site)}">prommer.net</a>.
   </footer>
 </div>
 

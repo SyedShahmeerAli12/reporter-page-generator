@@ -144,8 +144,8 @@ export function buildPacket(brief, facts, opts = {}) {
   const subject = [brief.topic, brief.questions].filter(Boolean).join(' \n ');
   const notices = [];
 
-  if (!reporter) notices.push('No reporter name given — the greeting falls back to a neutral one.');
-  if (!outlet) notices.push('No outlet given — prior coverage for that outlet cannot be surfaced.');
+  if (!reporter) notices.push('No reporter name given, so the greeting falls back to a neutral one.');
+  if (!outlet) notices.push('No outlet given, so prior coverage for that outlet cannot be surfaced.');
 
   let topics = scoreTopics(subject, facts);
   if (topics.length === 0) {

@@ -1,100 +1,100 @@
 # Reporter Page Generator
 
-Turns a journalist's request into a tailored, unlisted response page for `prommer.net/r/` in about thirty seconds.
+Builds a tailored, unlisted response page for a journalist in about thirty seconds.
 
 **Live tool:** https://syedshahmeerali12.github.io/reporter-page-generator/
-**Example output:** https://syedshahmeerali12.github.io/reporter-page-generator/r/jane-doe-business-insider/
+**Example page:** https://syedshahmeerali12.github.io/reporter-page-generator/r/jane-doe-business-insider/
 
----
+## The problem
 
-## Where this came from
-
-I did not start from the homepage. I started from `prommer.net/robots.txt`, which contains this:
+I found this in `prommer.net/robots.txt`:
 
 ```
-# Journalist response pages — one per reporter, unlisted by design and personal
+# Journalist response pages, one per reporter, unlisted by design and personal
 # to the recipient. Never linked from the site; already noindex,nofollow.
 Disallow: /r/
 ```
 
-That is a deliberate, effective pattern: instead of replying to a reporter with an email, Thomas sends them a page built for them. It is almost certainly why the press page carries 18 placements across Business Insider, USA Today, CIO.com, AP and Sportschau — he is the easiest source in the inbox to work with.
+So when a reporter gets in touch, they are not sent an email. They are sent a page built for them. It works: the press page carries 18 placements across Business Insider, USA Today, CIO.com, AP and Sportschau.
 
-The pattern deserves tooling. This is that tooling.
+But every one of those pages needs the right bio, the right headshot, the right quote and the right prior coverage picked out by hand, against a reporter's deadline. That is the same job over and over.
 
-**What I am not claiming:** `robots.txt` tells me the pages exist. It does not tell me how they are produced. Given 901 commits a week, there may well already be a script behind them. So this is not "you do this by hand and I fixed it" — it is an independent implementation of a pattern the site already proves works, offered so the engineering can be judged on its own terms.
+## The solution
 
-**What I deliberately did not do:** `/r/` is marked private and personal to each recipient. I did not open any of those pages. Everything here is built from public sources — the press index, the about page, `llms.txt` and `robots.txt`.
-
----
-
-## The design decision that drives everything
-
-A page a reporter quotes from must never contain a sentence a language model invented. A hallucinated quote attributed to a real executive in a real publication is not a bug you patch later — it is a correction, and possibly a retraction.
-
-So **no generative model writes any output**. Every bio, quote, headline and date is copied verbatim out of `data/thomas-facts.json`. The judgement-shaped work — reading what a reporter asked about and deciding what is relevant — is done by keyword scoring over a curated topic vocabulary.
-
-That choice buys four things:
-
-| | |
-|---|---|
-| **Deterministic** | Same brief in, same page out. Diffs are meaningful. |
-| **Testable** | 34 tests assert real ranking behaviour, not "it returned a string". |
-| **Explainable** | The UI shows which topics matched and why each clipping was chosen. |
-| **Free and offline** | No API key, no per-page cost, no vendor outage between Thomas and a deadline. |
-
-Where a model *would* help is drafting answers to the reporter's actual questions. That is exactly where a mistake is most expensive, so the generator leaves those blocks empty, marks them `data-needs-answer`, and the UI refuses to call the page ready while any remain.
-
----
-
-## How ranking works
-
-**Topics** — the reporter's own words are scored against a vocabulary of ten topics. Single keywords match as prefixes, so `credit` catches `crediting` and `promotion` catches `promotions`; the leading boundary stays strict so `board` never matches `onboarding`. Top three topics win.
-
-**Press** — each clipping scores:
+Type four things. Get the page.
 
 ```
-overlap × 10   matching topic tags — relevance to what they asked
-      + 6      same outlet — "you ran this before" is the strongest proof
-   + 0/4/8     masthead tier — credibility outranks freshness
-    + 0–5      recency, decaying half a point per month
+Reporter   Klaus Berg
+Outlet     Sportschau
+Topic      GLP-1 weight-loss drugs in sport and whether it is doping
+Deadline   23 Sep 2026
 ```
 
-The tier weight exists because of a failing test: ranking on relevance and recency alone put a Medium post above Business Insider because it was one day newer. For a page whose job is to establish credibility, that ordering is wrong.
+The tool reads the reporter's own words, matches them against a topic vocabulary, and pulls only what fits from one source of truth (`data/thomas-facts.json`). You write the answers to their questions, download the file, and drop it at `/r/<slug>/`.
 
-**Quotes** — only quotes tagged to a matched topic are shown. If none match, the page says so and offers a live interview rather than stretching an unrelated quote.
+**No language model writes any of it.** Every bio, quote and headline is copied verbatim from the facts file. A made-up quote in a real newspaper is a correction, not a bug, so the generator is retrieval only: deterministic, testable, and free to run.
 
-**Failure is loud, never silent.** No topic match falls back to most-recent coverage *and* posts a notice saying that is what happened.
+The one place a model would help is drafting answers to the reporter's questions. That is also where a mistake costs the most, so those blocks are left empty, marked `data-needs-answer`, and the tool refuses to call the page ready while any remain.
 
----
+## Example
 
-## Layout
+Same tool, two different requests:
+
+| | Business Insider, AI attribution | Sportschau, GLP-1 in sport |
+|---|---|---|
+| Topics matched | ai-attribution, agentic-engineering | sports-science, endurance |
+| Quote chosen | "They didn't want their best contributions footnoted as 'cowritten by Claude'." | "The data is too thin to call it doping, and too suggestive to call it nothing." |
+| Top article | Business Insider, 13 Jul 2026 | Sportschau, 3 Sep 2026 |
+| Badge | Your outlet, same subject | Your outlet, same subject |
+
+Out of 18 press items and 6 quotes, it picked the right ones both times.
+
+## How it picks
+
+Each article is scored:
 
 ```
-data/thomas-facts.json   one source of truth — every fact on every page
-src/engine.js            scoring and selection, pure functions, no DOM
-src/render.js            packet -> standalone HTML page
-index.html               the generator UI
-scripts/build-demo.mjs   regenerates the committed example
-test/                    34 tests
-r/                       generated example output
+overlap x 10   matching topic tags
+      + 6      same outlet as the reporter
+   + 0/4/8     masthead tier
+    + 0 to 5   recency, decaying half a point a month
 ```
 
-The facts file is deliberately the only place a fact lives, so the same source can also drive the JSON-LD block, a press kit, or the existing `llms.txt`.
+The tier weight came from a failing test. Relevance plus recency alone put a Medium post above Business Insider because it was one day newer. On a page whose job is credibility, that order is wrong.
 
----
+Single keywords match as prefixes, so `credit` catches `crediting` and `promotion` catches `promotions`, but `board` never matches `onboarding`.
 
-## Output properties
+If nothing matches, the page falls back to recent coverage and says so on screen. It never stretches an unrelated quote to fill space.
 
-Each generated page is a single HTML file with inline CSS and no third-party requests — it works emailed as an attachment, saved to disk, or served from `/r/<slug>/`. It carries `noindex, nofollow, noarchive` to honour the contract already declared in `robots.txt`, ships a `schema.org/Person` JSON-LD block built from the same facts file, renders in light and dark, and falls back to an initials tile rather than ever showing a broken headshot. Reporter-supplied text is escaped on the way in — there is a test that feeds it `<img src=x onerror=...>`.
+## Output
 
----
+One HTML file, inline CSS, no third-party requests. Works emailed, saved to disk, or served from `/r/`. Carries `noindex, nofollow, noarchive` to match the contract in robots.txt, plus a `schema.org/Person` block built from the same facts file. Light and dark. Reporter input is escaped; there is a test that feeds it `<img src=x onerror=...>`.
+
+## Two notes on scope
+
+`robots.txt` tells me these pages exist. It does not tell me how they are made. At 901 commits a week there may already be a script behind them, so this is not a claim that anyone works by hand. It is an independent build of a pattern the site already proves works.
+
+`/r/` is marked private and personal to each recipient, so I did not open any of those pages. Everything here comes from public sources: the press index, the about page, `llms.txt` and `robots.txt`.
 
 ## Run it
 
 ```bash
-npm test      # 34 tests
-npm run demo  # regenerate the example page
-npm run serve # http://localhost:8080
+npm test          # 34 tests
+npm run demo      # rebuild the example page
+npm run verify:live   # test the deployed files
+npm run serve     # http://localhost:8080
 ```
 
 No dependencies. Node 18+.
+
+## Files
+
+```
+data/thomas-facts.json   one source of truth
+src/engine.js            scoring and selection, pure functions
+src/render.js            packet to standalone HTML
+index.html               the generator UI
+scripts/                 demo build, live verification
+test/                    34 tests
+r/                       generated example
+```

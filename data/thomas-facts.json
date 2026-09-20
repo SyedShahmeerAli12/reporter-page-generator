@@ -6,7 +6,7 @@
     "name": "Thomas Prommer",
     "oneLiner": "Technology executive and AI strategist. Group CEO of We The Flywheel. Former Global SVP Engineering at Adidas, CIO at Sweetgreen, and President, Technology at Huge.",
     "jobTitle": "Group CEO, We The Flywheel",
-    "location": "New York, United States — operates globally",
+    "location": "New York, United States (operates globally)",
     "nationality": [
       "United States",
       "Germany"
@@ -37,7 +37,7 @@
   "bios": {
     "oneLiner": "Technology executive and AI strategist. Group CEO of We The Flywheel. Former Global SVP Engineering at Adidas, CIO at Sweetgreen, and President, Technology at Huge.",
     "short": "Thomas Prommer holds 20+ years scaling engineering at Fortune 500 companies. Former Global SVP Engineering at Adidas (1000+ engineers, $9B+ e-commerce, 50 markets), CIO at Sweetgreen, and President, Technology at Huge (IPG). He has directed 1000+ engineers throughout his career. Currently Group CEO of We The Flywheel and publishes independent AI research at prommer.net and ctaio.dev.",
-    "full": "Seasoned technology executive with two decades building and scaling engineering at Fortune 500 and high-growth firms. At Adidas, led 1000+ engineers unifying regional teams into a global function supporting $9B+ e-commerce across 50 markets, modernizing platforms and infrastructure. Previously CIO at Sweetgreen, modernizing point-of-sale and launching the digital ordering platform that drives the majority of revenue. Earlier, President, Technology at Huge (IPG), growing the practice from 50 to 500+ engineers across 14 offices, serving Apple, Google, McDonald's, Toyota and Nike. Currently Group CEO of We The Flywheel — a sports media network, AI consultancy and product studio — and an independent AI strategy writer at prommer.net and ctaio.dev."
+    "full": "Seasoned technology executive with two decades building and scaling engineering at Fortune 500 and high-growth firms. At Adidas, led 1000+ engineers unifying regional teams into a global function supporting $9B+ e-commerce across 50 markets, modernizing platforms and infrastructure. Previously CIO at Sweetgreen, modernizing point-of-sale and launching the digital ordering platform that drives the majority of revenue. Earlier, President, Technology at Huge (IPG), growing the practice from 50 to 500+ engineers across 14 offices, serving Apple, Google, McDonald's, Toyota and Nike. Currently Group CEO of We The Flywheel, a sports media network, AI consultancy and product studio, and an independent AI strategy writer at prommer.net and ctaio.dev."
   },
   "roles": [
     {
@@ -418,7 +418,7 @@
     },
     {
       "outlet": "Hyground",
-      "title": "Partner Ecosystem Update — CTO purchasing guide for AI-SRE tools",
+      "title": "Partner Ecosystem Update: CTO purchasing guide for AI-SRE tools",
       "date": "2026-05-28",
       "tier": 2,
       "url": "https://hyground.ai/blog/partner-update-may-2026",

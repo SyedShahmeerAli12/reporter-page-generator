@@ -65,7 +65,7 @@ iframe{width:100%; height:760px; border:0; display:block; background:#fff}
 <header>
   <p class="eyebrow">prommer.net · /r/</p>
   <h1>Reporter Page Generator</h1>
-  <p class="lede">prommer.net's robots.txt declares a page per reporter under <code>/r/</code> — unlisted, noindex, personal to the recipient. This builds one from a request in about thirty seconds, from a single source of truth, without a language model writing a word of it.</p>
+  <p class="lede">prommer.net's robots.txt declares a page per reporter under <code>/r/</code>: unlisted, noindex, personal to the recipient. This builds one from a request in about thirty seconds, from a single source of truth, without a language model writing a word of it.</p>
 </header>
 
 <div class="cols">
@@ -81,7 +81,7 @@ iframe{width:100%; height:760px; border:0; display:block; background:#fff}
 
     <label for="topic">What are they writing about?</label>
     <input id="topic" name="topic" placeholder="AI attribution in engineering teams" autocomplete="off">
-    <p class="hint">Scored against a curated topic vocabulary — paste their own words for the best match.</p>
+    <p class="hint">Scored against a curated topic vocabulary. Paste their own words for the best match.</p>
 
     <label for="questions">Their questions <span style="font-weight:400;color:var(--muted)">(one per line)</span></label>
     <textarea id="questions" name="questions" placeholder="1. Are managers really crediting AI over people?&#10;2. What does that do to promotion cycles?"></textarea>
@@ -178,7 +178,7 @@ function build() {
     'Matched topics: ' +
     (packet.topics.length
       ? packet.topics.map((t) => '<code>' + t.id + '</code>').join(' ')
-      : '<code>none — fell back to recency</code>') +
+      : '<code>none, fell back to recency</code>') +
     '<br>Selected ' + packet.press.length + ' of ' + facts.press.length + ' press items, ' +
     packet.quotes.length + ' of ' + facts.quotes.length + ' on-record quotes.';
 }
@@ -218,7 +218,7 @@ fetch('./data/thomas-facts.json')
     build();
   })
   .catch((err) => {
-    $('notices').innerHTML = '<li>Could not load thomas-facts.json — ' + err.message + '</li>';
+    $('notices').innerHTML = '<li>Could not load thomas-facts.json: ' + err.message + '</li>';
   });
 </script>
 </body>
