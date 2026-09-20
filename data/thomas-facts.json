@@ -1,0 +1,501 @@
+{
+  "_comment": "Single source of truth. Every generated page, JSON-LD block and llms.txt line is derived from this file. Nothing factual is ever written by a language model.",
+  "version": "1.0.0",
+  "updated": "2026-09-20",
+  "person": {
+    "name": "Thomas Prommer",
+    "oneLiner": "Technology executive and AI strategist. Group CEO of We The Flywheel. Former Global SVP Engineering at Adidas, CIO at Sweetgreen, and President, Technology at Huge.",
+    "jobTitle": "Group CEO, We The Flywheel",
+    "location": "New York, United States — operates globally",
+    "nationality": [
+      "United States",
+      "Germany"
+    ],
+    "languages": [
+      "English",
+      "German",
+      "Spanish",
+      "French"
+    ],
+    "site": "https://prommer.net",
+    "photo": "https://prommer.net/",
+    "photoNote": "Headshot URL to be set by Thomas. Placeholder renders an initials tile so the page never ships a broken image.",
+    "education": [
+      "M.Sc. Computer Science, Karlsruhe Institute of Technology",
+      "Research, Carnegie Mellon University"
+    ],
+    "sameAs": [
+      "https://linkedin.com/in/thomasprommer",
+      "https://x.com/thomas_prommer",
+      "https://github.com/thomas-prommer",
+      "https://youtube.com/@thomasprommer",
+      "https://medium.com/@thomas.prommer",
+      "https://wetheflywheel.com",
+      "https://ctaio.dev"
+    ]
+  },
+  "bios": {
+    "oneLiner": "Technology executive and AI strategist. Group CEO of We The Flywheel. Former Global SVP Engineering at Adidas, CIO at Sweetgreen, and President, Technology at Huge.",
+    "short": "Thomas Prommer holds 20+ years scaling engineering at Fortune 500 companies. Former Global SVP Engineering at Adidas (1000+ engineers, $9B+ e-commerce, 50 markets), CIO at Sweetgreen, and President, Technology at Huge (IPG). He has directed 1000+ engineers throughout his career. Currently Group CEO of We The Flywheel and publishes independent AI research at prommer.net and ctaio.dev.",
+    "full": "Seasoned technology executive with two decades building and scaling engineering at Fortune 500 and high-growth firms. At Adidas, led 1000+ engineers unifying regional teams into a global function supporting $9B+ e-commerce across 50 markets, modernizing platforms and infrastructure. Previously CIO at Sweetgreen, modernizing point-of-sale and launching the digital ordering platform that drives the majority of revenue. Earlier, President, Technology at Huge (IPG), growing the practice from 50 to 500+ engineers across 14 offices, serving Apple, Google, McDonald's, Toyota and Nike. Currently Group CEO of We The Flywheel — a sports media network, AI consultancy and product studio — and an independent AI strategy writer at prommer.net and ctaio.dev."
+  },
+  "roles": [
+    {
+      "title": "Group CEO",
+      "org": "We The Flywheel",
+      "current": true
+    },
+    {
+      "title": "Co-founder",
+      "org": "Flywheel Motion",
+      "current": true
+    },
+    {
+      "title": "Founder",
+      "org": "ctaio.dev",
+      "current": true
+    },
+    {
+      "title": "Global SVP, Engineering",
+      "org": "Adidas",
+      "current": false,
+      "scale": "1000+ engineers, $9B+ e-commerce, 50 markets"
+    },
+    {
+      "title": "Chief Information Officer",
+      "org": "Sweetgreen",
+      "current": false
+    },
+    {
+      "title": "President, Technology",
+      "org": "Huge (IPG)",
+      "current": false,
+      "scale": "50 to 500+ engineers across 14 offices"
+    }
+  ],
+  "awards": [
+    {
+      "name": "Global CIO 2026",
+      "by": "HotTopics",
+      "year": 2026,
+      "tags": [
+        "cio-cto-role",
+        "recognition"
+      ]
+    },
+    {
+      "name": "World Changing Ideas 2026 (Flywheel Motion)",
+      "by": "Fast Company",
+      "year": 2026,
+      "tags": [
+        "recognition",
+        "brand-building"
+      ]
+    },
+    {
+      "name": "Webby Award 2026",
+      "by": "The Webby Awards",
+      "year": 2026,
+      "tags": [
+        "recognition",
+        "brand-building"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "ai-strategy",
+      "label": "Enterprise AI strategy and why most AI programmes aim too low",
+      "keywords": [
+        "ai strategy",
+        "enterprise ai",
+        "ai value",
+        "ai roi",
+        "ai maturity",
+        "transformation",
+        "playbook",
+        "adoption"
+      ]
+    },
+    {
+      "id": "ai-attribution",
+      "label": "AI attribution: who gets the credit when the model helped",
+      "keywords": [
+        "attribution",
+        "credit",
+        "promotion",
+        "raise",
+        "performance review",
+        "cowritten",
+        "copilot",
+        "blame"
+      ]
+    },
+    {
+      "id": "cio-cto-role",
+      "label": "The emerging Chief Technology & AI Officer role",
+      "keywords": [
+        "cio",
+        "cto",
+        "ctaio",
+        "chief information officer",
+        "chief technology officer",
+        "executive",
+        "leadership",
+        "board"
+      ]
+    },
+    {
+      "id": "eng-leadership",
+      "label": "Scaling engineering organisations from 50 to 1000+",
+      "keywords": [
+        "engineering leadership",
+        "scaling",
+        "org design",
+        "hiring",
+        "platform engineering",
+        "team"
+      ]
+    },
+    {
+      "id": "agentic-engineering",
+      "label": "Agentic engineering and AI-paired development in practice",
+      "keywords": [
+        "agentic",
+        "agent",
+        "ai-paired",
+        "pair programming",
+        "claude code",
+        "cursor",
+        "context engineering",
+        "developer tools"
+      ]
+    },
+    {
+      "id": "careers",
+      "label": "How AI is reshaping technology careers and entry-level hiring",
+      "keywords": [
+        "careers",
+        "entry-level",
+        "skills-first",
+        "graduate",
+        "data center",
+        "job market",
+        "salary",
+        "compensation"
+      ]
+    },
+    {
+      "id": "identity-security",
+      "label": "Identity and trust in an AI-era internet",
+      "keywords": [
+        "identity",
+        "passwords",
+        "trust",
+        "security",
+        "authentication",
+        "verification"
+      ]
+    },
+    {
+      "id": "ai-markets",
+      "label": "AI market structure, investment and the crypto convergence",
+      "keywords": [
+        "investment",
+        "investor",
+        "market",
+        "crypto",
+        "speculation",
+        "openai",
+        "anthropic",
+        "funding"
+      ]
+    },
+    {
+      "id": "endurance",
+      "label": "Hybrid endurance training: HYROX, marathon and Ironman",
+      "keywords": [
+        "hyrox",
+        "marathon",
+        "ironman",
+        "triathlon",
+        "endurance",
+        "training",
+        "crossfit",
+        "race"
+      ]
+    },
+    {
+      "id": "sports-science",
+      "label": "GLP-1 use in sport and the thin evidence base",
+      "keywords": [
+        "glp-1",
+        "glp1",
+        "ozempic",
+        "doping",
+        "abnehmspritze",
+        "weight",
+        "sport",
+        "anti-doping"
+      ]
+    }
+  ],
+  "quotes": [
+    {
+      "text": "They didn't want their best contributions footnoted as 'cowritten by Claude'.",
+      "context": "On why AI attribution backfired inside engineering teams.",
+      "source": "Business Insider, 13 July 2026",
+      "tags": [
+        "ai-attribution",
+        "eng-leadership"
+      ]
+    },
+    {
+      "text": "Most companies are still asking AI to make last year's process slightly cheaper. That is an incremental question, and it produces an incremental answer.",
+      "context": "On enterprise AI maturity.",
+      "source": "CIO.com, 29 April 2026",
+      "tags": [
+        "ai-strategy"
+      ]
+    },
+    {
+      "text": "AI is becoming the operating system of the company, not an application running on top of it.",
+      "context": "On where AI sits in the enterprise stack.",
+      "source": "CTO Craft, 28 May 2026",
+      "tags": [
+        "ai-strategy",
+        "cio-cto-role"
+      ]
+    },
+    {
+      "text": "The CIO's job stopped being about running systems and started being about proving return.",
+      "context": "On the changing remit of the technology executive.",
+      "source": "CIO.com State of the CIO 2026",
+      "tags": [
+        "cio-cto-role",
+        "eng-leadership"
+      ]
+    },
+    {
+      "text": "The data is too thin to call it doping, and too suggestive to call it nothing.",
+      "context": "On GLP-1 use in endurance sport.",
+      "source": "Sportschau (ARD), 3 September 2026",
+      "tags": [
+        "sports-science",
+        "endurance"
+      ]
+    },
+    {
+      "text": "You cannot scale an engineering organisation faster than you can scale the judgement inside it.",
+      "context": "On growing a practice from 50 to 500+ engineers.",
+      "source": "prommer.net",
+      "tags": [
+        "eng-leadership",
+        "careers"
+      ]
+    }
+  ],
+  "press": [
+    {
+      "outlet": "Sportschau (ARD)",
+      "title": "\"Datenlage zu dünn\": Abnehmspritze im Sport – ist das schon Doping?",
+      "date": "2026-09-03",
+      "tier": 1,
+      "url": "https://www.sportschau.de/investigativ/abnehmspritze-im-sport-ist-schon-doping,abnehmspritze-im-sport-100.html",
+      "tags": [
+        "sports-science",
+        "endurance"
+      ]
+    },
+    {
+      "outlet": "VC Magazine",
+      "title": "Beyond Passwords: How AI-Era Identity Platforms Are Redefining Trust Online",
+      "date": "2026-07-17",
+      "tier": 2,
+      "url": "https://vcmagazine.com/beyond-passwords-how-ai-era-identity-platforms-are-redefining-trust-online/",
+      "tags": [
+        "identity-security",
+        "ai-strategy"
+      ]
+    },
+    {
+      "outlet": "Medium",
+      "title": "Your Boss Told You to Use AI. Now the AI Is Getting the Credit.",
+      "date": "2026-07-14",
+      "tier": 3,
+      "url": "https://medium.com/@bucek.tomas/your-boss-told-you-to-use-ai-now-the-ai-is-getting-the-credit-youre-getting-the-blame-02842d13ad56",
+      "tags": [
+        "ai-attribution",
+        "careers"
+      ]
+    },
+    {
+      "outlet": "Business Insider",
+      "title": "Bosses credit AI instead of employees, delaying promotions, raises",
+      "date": "2026-07-13",
+      "tier": 1,
+      "url": "https://www.businessinsider.com/bosses-credit-human-employees-ai-delaying-promotions-raises-2026-7",
+      "tags": [
+        "ai-attribution",
+        "eng-leadership",
+        "careers"
+      ]
+    },
+    {
+      "outlet": "FINCHANNEL",
+      "title": "AI and Crypto Convergence: What Happens After the Speculation Fades",
+      "date": "2026-07-08",
+      "tier": 2,
+      "url": "https://finchannel.com/ai-and-crypto-convergence-what-happens-after-the-speculation-fades/132350/crypto/2026/07/",
+      "tags": [
+        "ai-markets"
+      ]
+    },
+    {
+      "outlet": "CIO.inc (ISMG)",
+      "title": "Why Enterprises Need a New Playbook for AI Value",
+      "date": "2026-07-01",
+      "tier": 2,
+      "url": "https://www.cio.inc/blogs/enterprises-need-new-playbook-for-ai-value-p-4144",
+      "tags": [
+        "ai-strategy",
+        "cio-cto-role"
+      ]
+    },
+    {
+      "outlet": "USA Today",
+      "title": "Thomas Prommer Named Global CIO 2026 by HotTopics",
+      "date": "2026-06-24",
+      "tier": 1,
+      "url": "https://www.usatoday.com/press-release/story/35463/thomas-prommer-named-global-cio-2026-by-hottopics/",
+      "tags": [
+        "recognition",
+        "cio-cto-role"
+      ]
+    },
+    {
+      "outlet": "Okoone",
+      "title": "Why most companies still think too small about AI",
+      "date": "2026-06-24",
+      "tier": 2,
+      "url": "https://www.okoone.com/spark/technology-innovation/why-most-companies-still-think-too-small-about-ai/",
+      "tags": [
+        "ai-strategy"
+      ]
+    },
+    {
+      "outlet": "AP News / ABNewswire",
+      "title": "Fast Company Names Flywheel Motion a 2026 World Changing Idea",
+      "date": "2026-06-18",
+      "tier": 1,
+      "url": "https://apnews.com/press-release/getnews/press-release-a479a48c322cf51378553529c4b19e09",
+      "tags": [
+        "recognition",
+        "brand-building"
+      ]
+    },
+    {
+      "outlet": "CIO.com",
+      "title": "State of the CIO, 2026: CIOs set the course for AI ROI",
+      "date": "2026-06-01",
+      "tier": 1,
+      "url": "https://www.cio.com/article/4178006/state-of-the-cio-2026-cios-set-the-course-for-ai-roi.html",
+      "tags": [
+        "cio-cto-role",
+        "ai-strategy"
+      ]
+    },
+    {
+      "outlet": "CTO Craft",
+      "title": "AI is the New OS",
+      "date": "2026-05-28",
+      "tier": 2,
+      "url": "https://ctocraft.com/ai-is-the-new-os/",
+      "tags": [
+        "ai-strategy",
+        "agentic-engineering"
+      ]
+    },
+    {
+      "outlet": "Hyground",
+      "title": "Partner Ecosystem Update — CTO purchasing guide for AI-SRE tools",
+      "date": "2026-05-28",
+      "tier": 2,
+      "url": "https://hyground.ai/blog/partner-update-may-2026",
+      "tags": [
+        "agentic-engineering",
+        "cio-cto-role"
+      ]
+    },
+    {
+      "outlet": "Noah News",
+      "title": "Most companies remain at early AI maturity stages",
+      "date": "2026-05-17",
+      "tier": 2,
+      "url": "https://noah-news.com/most-companies-remain-at-early-ai-maturity-stages-risking-missed-opportunities-a/",
+      "tags": [
+        "ai-strategy"
+      ]
+    },
+    {
+      "outlet": "Spiceworks",
+      "title": "How AI is Reshaping Data Center Careers",
+      "date": "2026-05-04",
+      "tier": 1,
+      "url": "https://www.spiceworks.com/it-hardware/how-ai-is-reshaping-data-center-careers/",
+      "tags": [
+        "careers"
+      ]
+    },
+    {
+      "outlet": "CIO.com (Spanish)",
+      "title": "Las compañías siguen buscando mejoras incrementales, no transformadoras, con la IA",
+      "date": "2026-04-30",
+      "tier": 1,
+      "url": "https://www.cio.com/article/4165397/las-empresas-siguen-buscando-mejoras-incrementales-no-transformadoras-con-la-ia.html",
+      "tags": [
+        "ai-strategy"
+      ],
+      "lang": "es"
+    },
+    {
+      "outlet": "CIO.com",
+      "title": "Enterprises still chase incremental, not transformational, AI gains",
+      "date": "2026-04-29",
+      "tier": 1,
+      "url": "https://www.cio.com/article/4164622/enterprises-still-chase-incremental-not-transformational-ai-gains.html",
+      "tags": [
+        "ai-strategy",
+        "cio-cto-role"
+      ]
+    },
+    {
+      "outlet": "College Recruiter",
+      "title": "From prompt engineering to soft skills: the new 'skills-first' baseline for EU entry-level roles",
+      "date": "2026-04-29",
+      "tier": 2,
+      "url": "https://www.collegerecruiter.com/blog/2026/04/29/from-prompt-engineering-to-soft-skills-the-new-skills-first-baseline-for-eu-entry-level-roles",
+      "tags": [
+        "careers"
+      ]
+    },
+    {
+      "outlet": "Money In Focus",
+      "title": "OpenAI, Anthropic Dispute Signals Shift in AI Investment Priorities",
+      "date": "2026-04-19",
+      "tier": 2,
+      "url": "https://moneyinfocus.news/openai-anthropic-ai-ethics-investor-sentiment-shift/",
+      "tags": [
+        "ai-markets"
+      ]
+    }
+  ],
+  "links": {
+    "about": "https://prommer.net/en/about/thomas-prommer/",
+    "advisory": "https://prommer.net/en/services/advisory/",
+    "askTom": "https://prommer.net/en/ask-tom/",
+    "press": "https://prommer.net/en/tech/press/",
+    "newsletter": "https://prommer.net/en/newsletter/",
+    "booking": "https://prommer.net/book-onboarding/"
+  }
+}
