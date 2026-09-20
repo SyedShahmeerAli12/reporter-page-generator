@@ -49,52 +49,11 @@ Same tool, two different requests:
 
 Out of 18 press items and 6 quotes, it picked the right ones both times.
 
-## How it picks
-
-Each article is scored:
-
-```
-overlap x 10   matching topic tags
-      + 6      same outlet as the reporter
-   + 0/4/8     masthead tier
-    + 0 to 5   recency, decaying half a point a month
-```
-
-The tier weight came from a failing test. Relevance plus recency alone put a Medium post above Business Insider because it was one day newer. On a page whose job is credibility, that order is wrong.
-
-Single keywords match as prefixes, so `credit` catches `crediting` and `promotion` catches `promotions`, but `board` never matches `onboarding`.
-
-If nothing matches, the page falls back to recent coverage and says so on screen. It never stretches an unrelated quote to fill space.
-
-## Output
-
-One HTML file, inline CSS, no third-party requests. Works emailed, saved to disk, or served from `/r/`. Carries `noindex, nofollow, noarchive` to match the contract in robots.txt, plus a `schema.org/Person` block built from the same facts file. Light and dark. Reporter input is escaped; there is a test that feeds it `<img src=x onerror=...>`.
-
-## Two notes on scope
-
-`robots.txt` tells me these pages exist. It does not tell me how they are made. At 901 commits a week there may already be a script behind them, so this is not a claim that anyone works by hand. It is an independent build of a pattern the site already proves works.
-
-`/r/` is marked private and personal to each recipient, so I did not open any of those pages. Everything here comes from public sources: the press index, the about page, `llms.txt` and `robots.txt`.
-
 ## Run it
 
 ```bash
-npm test          # 34 tests
-npm run demo      # rebuild the example page
-npm run verify:live   # test the deployed files
-npm run serve     # http://localhost:8080
+npm test     # 34 tests
+npm run demo # rebuild the example page
 ```
 
 No dependencies. Node 18+.
-
-## Files
-
-```
-data/thomas-facts.json   one source of truth
-src/engine.js            scoring and selection, pure functions
-src/render.js            packet to standalone HTML
-index.html               the generator UI
-scripts/                 demo build, live verification
-test/                    34 tests
-r/                       generated example
-```
