@@ -1,0 +1,5 @@
+# This demo mirrors the contract prommer.net already declares for /r/:
+# reporter pages are unlisted and personal to the recipient.
+User-agent: *
+Allow: /
+Disallow: /r/

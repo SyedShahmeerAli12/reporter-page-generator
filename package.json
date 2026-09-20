@@ -1,0 +1,12 @@
+{
+  "name": "reporter-page-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Builds tailored, unlisted journalist response pages for prommer.net/r/ from one source of truth.",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "demo": "node scripts/build-demo.mjs",
+    "serve": "python -m http.server 8080"
+  }
+}
