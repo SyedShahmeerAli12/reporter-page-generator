@@ -2,8 +2,8 @@
 
 Turns a journalist's request into a tailored, unlisted response page for `prommer.net/r/` in about thirty seconds.
 
-**Live tool:** _(URL added after deploy)_
-**Example output:** `/r/jane-doe-business-insider/`
+**Live tool:** https://syedshahmeerali12.github.io/reporter-page-generator/
+**Example output:** https://syedshahmeerali12.github.io/reporter-page-generator/r/jane-doe-business-insider/
 
 ---
 

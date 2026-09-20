@@ -7,6 +7,7 @@
   "scripts": {
     "test": "node --test \"test/*.test.js\"",
     "demo": "node scripts/build-demo.mjs",
-    "serve": "python -m http.server 8080"
+    "serve": "python -m http.server 8080",
+    "verify:live": "node scripts/verify-live.mjs"
   }
 }
